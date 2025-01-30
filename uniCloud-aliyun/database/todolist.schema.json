@@ -1,0 +1,57 @@
+{
+	"bsonType": "object",
+	"permission": {
+		// "read": "doc.user_id == auth.uid || doc.pair_user_id == auth.uid",
+		"read": true,
+		"create": "auth.uid != null",
+		"update": true,
+		"delete": "auth.uid != null"
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"bounty": {
+			"bsonType": "int",
+			"description": "奖励积分"
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"result": {
+			"bsonType": "bool",
+			"description": "任务执行结果，true:成功，false：失败"
+		},
+		"task_id": {
+			"bsonType": "string",
+			"description": "任务ID",
+			"foreignKey": "uni-id-task._id"
+		},
+		"user_id": {
+			"bsonType": "string",
+			"description": "用户id，参考uni-id-users表",
+			"forceDefaultValue": {
+				"$env": "uid"
+			},
+			"foreignKey": "uni-id-users._id"
+
+		},
+		"task": {
+			"bsonType": "string",
+			"description": "任务内容"
+
+		},
+		"date": {
+			"bsonType": "fulldate",
+			"description": "日期"
+		}
+	},
+	"required": [
+		"user_id"
+		// "task_id"
+	]
+}

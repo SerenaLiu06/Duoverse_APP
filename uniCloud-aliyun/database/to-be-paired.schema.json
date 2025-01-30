@@ -1,0 +1,32 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"user_id": {
+			"bsonType": "string",
+			"description": "用户ID"
+		},
+		"interest": {
+			"bsonType": "array",
+			"description": "兴趣名称"
+		},
+		"self_intro": {
+			"bsonType": "string",
+			"description": "自我介绍"
+		},
+		"status": {
+			"bsonType": "bool",
+			"description": "匹配状态 (0: 不匹配; 1: 匹配中)"
+		}
+	}
+}

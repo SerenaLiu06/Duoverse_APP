@@ -1,0 +1,57 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"exist": {},
+		"message": {},
+		"fileList": {},
+		"comment_count": {},
+		"thumbs_up_count": {},
+		"encourage_content": [{
+			"content_id": {},
+			"content": {},
+			"evaluate": {}
+		}],
+		"user_id": {
+			"bsonType": "string",
+			"description": "用户id，参考uni-id-users表",
+			"forceDefaultValue": {
+				"$env": "uid"
+			},
+			"foreignKey": "uni-id-users._id"
+		},
+		"user_nickname": {
+			"bsonType": "string",
+			"foreignKey": "uni-id-users.nickname"
+		},
+		"date": {},
+		"index_post": {},
+		"imgList": [{
+			"url": {},
+			"id": {}
+		}],
+		"imgs": [],
+		"like_list": [],
+		"comment_content": [{
+			"id": {},
+			"owner": {},
+			"hasLike": {},
+			"likeNum": {},
+			"avatarUrl": {},
+			"nickName": {},
+			"content": {},
+			"parentId": {},
+			"createTime": {}
+		}],
+		"id": {}
+	}
+}

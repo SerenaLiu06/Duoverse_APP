@@ -1,0 +1,30 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"user_id": {
+			"bsonType": "string",
+			"description": "用户id，参考uni-id-users表",
+			// "forceDefaultValue": {
+			// 	"$env": "uid"
+			// },
+			"foreignKey": "uni-id-users._id"
+
+		},
+		"request_list": {
+			"bsonType": "array",
+			"description": "匹配申请列表"
+		}
+	}
+
+}
